@@ -1,0 +1,41 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /products/{id} {
+      // Lectura pública: tienda visible sin login
+      allow read: if true;
+
+      // Alta y borrado: solo admin autenticado
+      allow create, delete: if request.auth != null;
+
+      // Edición: admin total, o compra pública que SOLO descuenta stock (sin tocar lo demás)
+      // (acepta int, float/double o string numérico heredado; también permite descontar stock dentro de variants)
+      allow update: if request.auth != null || (
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['stock', 'variants'])
+        && (!request.resource.data.keys().hasAny(['variants']) || request.resource.data.variants.size() == resource.data.variants.size())
+        && (!request.resource.data.keys().hasAny(['stock']) || (
+          request.resource.data.stock is number
+          && request.resource.data.stock >= 0
+          && (
+            (resource.data.stock is number && request.resource.data.stock < resource.data.stock)
+            || (resource.data.stock is string && request.resource.data.stock < int(resource.data.stock))
+          )
+        ))
+      );
+    }
+
+    // Categorías: lectura pública (las usa el admin y a futuro el menú),
+    // escritura solo admin.
+    match /categories/{id} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Todo lo demás: denegado por defecto
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.dashboard {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.8rem;
+  font-family: Arial, sans-serif;
+  background: #fffdf7;
+  border: 1px solid #e4d5bc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(58, 42, 29, 0.12);
+  color: #3a2a1d;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4d5bc;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #3a2a1d;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ---------------- ACCIONES ---------------- */
+
+.dashboard-actions {
+  margin-bottom: 2rem;
+}
+
+.dashboard .action-card.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dashboard-actions h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.actions-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-card {
+  flex: 1;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: #3a2a1d;
+  background: #efe3cf;
+  border-radius: 10px;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.action-card:hover {
+  background: #c96a2b;
+  color: #fffdf7;
+  transform: translateY(-2px);
+}
+
+.header-actions button:hover {
+  background-color: #f53c4e;
+}
+
+/* ---------------- LISTA PARA EDITAR ---------------- */
+
+.dashboard-products {
+  margin-bottom: 2rem;
+}
+
+.dashboard-products h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.dashboard-product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.dashboard-product-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: #f7f0e5;
+  border: 1px solid #e4d5bc;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+}
+
+.dashboard-product-list small {
+  color: #6b5a4a;
+}
+
+.btn-edit {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fffdf7;
+  background: #c96a2b;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  white-space: nowrap;
+}
+
+.btn-edit:hover {
+  background: #a8551f;
+}
+
+/* ---------------- AYUDA ---------------- */
+
+.dashboard-help {
+  background: #f7f0e5;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #6b5a4a;
+  border: 1px solid #e4d5bc;
+  box-shadow: 0 2px 4px rgba(58, 42, 29, 0.1);
+}
+
+.dashboard-help h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}

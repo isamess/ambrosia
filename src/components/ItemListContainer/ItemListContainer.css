@@ -1,0 +1,115 @@
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    width: fit-content;
+    max-width: calc(100% - 32px);
+    margin: 45px auto;
+    padding: 14px 18px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(58, 42, 29, 0.06);
+
+    font-family: var(--sans);
+}
+
+/* Botones */
+
+.pagination button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 42px;
+    padding: 10px 18px;
+
+    background: var(--surface);
+    color: var(--text-h);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Interacción */
+
+.pagination button:hover:not(:disabled) {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(201, 106, 43, 0.2);
+}
+
+/* Botones deshabilitados */
+
+.pagination button:disabled {
+    background: var(--surface-2);
+    color: var(--text);
+    border-color: var(--border);
+
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Indicador de página */
+
+.pagination span {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.pagination span strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Accesibilidad */
+
+.pagination button:focus-visible {
+    outline: 3px solid var(--accent-border);
+    outline-offset: 3px;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 480px) {
+    .pagination {
+        gap: 8px;
+        padding: 10px;
+        margin: 30px auto;
+        border-radius: 10px;
+    }
+
+    .pagination button {
+        min-height: 38px;
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+
+    .pagination span {
+        font-size: 12px;
+    }
+}
+```

@@ -1,0 +1,105 @@
+.footer {
+  background: #2f241a;
+  color: #f7f0e5;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* columnas */
+.footer__col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer__col--center {
+  text-align: center;
+}
+
+.footer__col--center .footer__social {
+  justify-content: center;
+}
+
+.footer__title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #e89a4a;
+}
+
+/* links */
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__links li {
+  margin-bottom: 8px;
+}
+
+.footer__links a {
+  text-decoration: none;
+  color: #f7f0e5;
+  transition: color 0.3s ease;
+}
+
+.footer__links a:hover {
+  color: #e89a4a;
+}
+
+/* redes */
+.footer__social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__social a {
+  font-size: 1.2rem;
+  color: #f7f0e5;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer__social a:hover {
+  color: #e89a4a;
+  transform: scale(1.2);
+}
+
+/* línea inferior */
+.footer__bottom {
+  border-top: 1px solid #4a382a;
+  margin-top: 30px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #c9b99e;
+}
+.footer__social a {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: #e40a0a;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer__social a:hover {
+  color: #e89a4a;
+  transform: scale(1.2);
+}
+.footer__social a:nth-child(1):hover {
+  color: #e40a0a; /* Instagram */
+}
+
+.footer__social a:nth-child(2):hover {
+  color: #026bf3; /* Facebook */
+}
+
+.footer__social a:nth-child(3):hover {
+  color: #f213b3; /* TikTok */
+}

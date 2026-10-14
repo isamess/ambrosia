@@ -1,0 +1,17 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Georgia', sans serif;
+  line-height: 2;
+  background: #fffdf7;
+  border: 1px solid #e4d5bc;
+   box-shadow: 
+    0 20px 40px rgba(58, 42, 29, 0.15),
+    0 0 20px rgba(201, 106, 43, 0.15);
+}
+.title {
+   font-family: 'Georgia', sans serif;
+   color: #c96a2b;
+   text-align: center;
+}

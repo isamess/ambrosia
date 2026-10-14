@@ -1,0 +1,206 @@
+/* Contenedor del formulario */
+.product-form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  background: #fffdf7; /* crema claro */
+  color: #3a2a1d;
+  border: 1px solid #e4d5bc;
+  border-radius: 12px;
+  box-shadow: 
+    0 20px 40px rgba(58, 42, 29, 0.15),
+    0 0 20px rgba(201, 106, 43, 0.15);
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+.product-form h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.6rem;
+  color: #c96a2b;
+}
+
+/* Filas del formulario (tus <div>) */
+.product-form > div {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%
+}
+
+/* Label + elementos */
+.product-form label {
+  font-size: 0.95rem;
+  color: #6b5a4a;
+}
+
+/* Inputs / textarea */
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.75rem;
+  border: 1px solid #e4d5bc;
+  border-radius: 8px;
+  background: #f7f0e5;
+  color: #3a2a1d;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+  box-sizing: border-box;
+    
+}
+
+/* Placeholder más tenue */
+.product-form ::placeholder {
+  color: #a68a6b;
+}
+
+/* Hover/focus */
+.product-form input[type="text"]:focus,
+.product-form input[type="number"]:focus,
+.product-form input[type="file"]:focus,
+.product-form textarea:focus {
+  border-color: #c96a2b;
+  background: #fffdf7;
+}
+
+/* Textarea */
+.product-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Nota pequeña (tu <small>) */
+.product-form small {
+  color: #6b5a4a;
+}
+
+/* Preview de imagen */
+.product-form img {
+  display: block;
+  max-width: 220px;
+  border-radius: 8px;
+  border: 1px solid #e4d5bc;
+  margin-top: 0.35rem;
+}
+
+/* Previews múltiples acumuladas */
+.file-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.file-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 160px;
+}
+
+.file-preview img {
+  max-width: 140px;
+  margin-top: 0;
+}
+
+.file-preview span {
+  font-size: 0.75rem;
+  color: #6b5a4a;
+  word-break: break-all;
+  text-align: center;
+}
+
+.file-preview button {
+  border: 1px solid #e4d5bc;
+  background: #f7f0e5;
+  color: #3a2a1d;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+/* Botón principal reutilizable */
+.btn-admin {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #c96a2b;
+  color: #fffdf7;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.05s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  background: #a8551f;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Layout responsive (opcional, si más adelante querés dos columnas) */
+@media (min-width: 640px) {
+  .product-form .row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+.success-page {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: #fffdf7;
+  color: #3a2a1d;
+  border: 1px solid #e4d5bc;
+  border-radius: 12px;
+   box-shadow: 
+    0 20px 40px rgba(58, 42, 29, 0.15),
+    0 0 20px rgba(201, 106, 43, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ícono grande */
+.success-page .success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Título */
+.success-page h2 {
+  margin-bottom: 0.5rem;
+  color: #c96a2b;
+}
+
+/* Texto secundario */
+.success-page p {
+  color: #6b5a4a;
+  margin-bottom: 1.5rem;
+}
+
+.error {
+  color: red;
+}

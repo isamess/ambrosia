@@ -1,0 +1,95 @@
+.boton {
+  background: linear-gradient(135deg, #c96a2b, #e09a4a);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.boton:active {
+  transform: scale(0.96);
+}
+
+.item-detail-section {
+  text-align: center;
+}
+
+.item-detail-section h1 {
+  text-align: center;
+}
+
+.item-detail-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.item-detail-container article {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 560px;
+}
+
+.item-detail-container .boton {
+  margin: 1rem auto 0;
+}
+
+.tarjeta--detail {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.tarjeta--detail .gallery-main {
+  width: 100%;
+  max-width: 510px;
+  height: 360px;
+  object-fit: contain;
+  display: block;
+  margin: 12px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #efe3cf;
+  border-radius: 12px;
+}
+
+.gallery-thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 12px 0;
+}
+
+.gallery-thumbs .thumb {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0;
+  cursor: pointer;
+  background: #efe3cf;
+  line-height: 0;
+}
+
+.gallery-thumbs .thumb img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.gallery-thumbs .thumb.selected {
+  border-color: #c96a2b;
+}
