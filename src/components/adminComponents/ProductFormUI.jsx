@@ -1,3 +1,4 @@
+import './ProductFormUI.css';
 
 export const ProductFormUI = ({ //recibimos las props del componente contenedor
   product,

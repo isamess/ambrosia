@@ -9,7 +9,7 @@ export const Footer = () => {
         
         <div className="footer__col footer__col--center">
           <h3 className="footer__title">Ambrosía Delicatessen</h3>
-          <p>Diseño con alma 💜</p>
+          
         </div>
 
         <div className="footer__col footer__col--center">
@@ -19,6 +19,10 @@ export const Footer = () => {
             <li><Link to="/about">Nosotr@s</Link></li>
             <li><Link to="/contact">Contacto</Link></li>
           </ul>
+
+        <div >
+          <p> Diseñado con alma por <a className="footer_insta_design" href="https://www.instagram.com/isadisenioweb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">isadisenioweb 💜</a> </p>
+        </div>
         </div>
 
         <div className="footer__col footer__col--center">

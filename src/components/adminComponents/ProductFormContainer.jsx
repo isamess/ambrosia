@@ -31,7 +31,9 @@ export const ProductFormContainer = () => {
     }, []);
 
 
-//función para que no tenga que estar repitiendo código en cada input, es decir, es un manejador genérico para todos los campos del formulario. Forma programática de armar las clave-valor del obj de las product.
+//función para que no tenga que estar repitiendo código en cada input, 
+//es decir, es un manejador genérico para todos los campos del formulario. 
+//Forma programática de armar las clave-valor del obj de las product.
 
 const handleChange = (e) => {
     const { name, value } = e.target; // desestructuro solo el name y value

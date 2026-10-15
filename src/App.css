@@ -7,3 +7,9 @@ main {
   width: 100%;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 180px; /* header en 2 filas */
+  }
+}

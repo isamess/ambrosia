@@ -69,7 +69,9 @@ export const getProductById = async (id) => {
 export const getByCategory = async (category) => {
     try{
         let queryRef;
-//verificamos, filtramos por esa categoría, luego guardamos en queryRef para hacer la consulta a firebase, y luego lo mapeamos para devolver un array de productos con su id incluido
+//verificamos, filtramos por esa categoría, 
+//guardamos en queryRef para hacer la consulta a firebase,
+//mapeamos para devolver un array de productos con su id incluido
 //nota: filtra por categorySlug (esquema nuevo) y cae a category (docs viejos del admin) para no mostrar vacío durante la migración
         if(category){
             const slug = slugify(category);
@@ -128,10 +130,16 @@ export const updateProduct = async (id, productData) => {
 export const decrementStock = async (cartItems) => {
     try {
         await runTransaction(db, async (transaction) => {
+            // Fase 1: TODAS las lecturas primero (Firestore lo exige antes de escribir)
+            const reads = [];
             for (const item of cartItems) {
                 const qty = item.quantity || 1;
                 const productRef = doc(db, "products", item.id);
                 const snapshot = await transaction.get(productRef);
+                reads.push({ item, qty, productRef, snapshot });
+            }
+            // Fase 2: validaciones + escrituras
+            for (const { item, qty, productRef, snapshot } of reads) {
                 if (!snapshot.exists()) {
                     throw new Error(`El producto "${item.name || item.id}" ya no existe`);
                 }

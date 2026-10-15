@@ -86,6 +86,11 @@
   line-height: 1;
   color: #e40a0a;
   transition: transform 0.3s ease, color 0.3s ease;
+  
+}
+.footer_insta_design {
+  text-decoration: none;
+  color: #e89a4a;
 }
 
 .footer__social a:hover {

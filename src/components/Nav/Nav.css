@@ -58,3 +58,25 @@
   justify-content: center;
   line-height: 1;
 }
+
+/* Móvil: menú en 2 filas centradas en vez de una fila cortada */
+@media (max-width: 768px) {
+  nav.menu {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  nav.menu > ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+    column-gap: 14px;
+    white-space: normal;
+  }
+
+  nav.menu li {
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+    white-space: normal;
+  }
+}

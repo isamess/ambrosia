@@ -81,9 +81,9 @@ export const CartProvider = ({children})=>{
     };
 
     //vaciar carrito
-    const clearCart=()=>{
+    const clearCart=(silent=false)=>{
         setCart([]);
-        alert('Carrito vacío!');
+        if (!silent) alert('Carrito vacío!');
     };
 
     //calcular total de items del carrito sin quantity

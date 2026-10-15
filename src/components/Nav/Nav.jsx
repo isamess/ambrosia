@@ -46,7 +46,7 @@ export const Nav = () => {
     ))}
 
     <li>
-        <Link to="/about">Acerca de</Link>
+        <Link to="/about">Nosotr@s</Link>
     </li>
 
     <li>

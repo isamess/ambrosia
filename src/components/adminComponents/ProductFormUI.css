@@ -1,0 +1,25 @@
+/* Botón Guardar */
+.btn-guardar {
+  background-color: var(--accent);
+  color: rgb(224, 193, 68);
+  padding: 10px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.btn-guardar:hover {
+  filter: brightness(0.9);
+}
+
+/* Botón Elegir archivo */
+.btn-archivo::file-selector-button {
+  background-color: var(--surface-2);
+  color: var(--text-h);
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}

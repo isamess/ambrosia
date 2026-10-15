@@ -1,10 +1,12 @@
 import './App.css';
-import{Route, Routes, Navigate} from 'react-router-dom';
+import{Route, Routes, Navigate, useLocation} from 'react-router-dom';
+import { useEffect } from 'react';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.jsx'; 
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 import {About} from './components/About/About.jsx';
 import Contact from './components/Contacto/Contacto.jsx';
 import {CartView} from './components/Cart/CartView.jsx';
+import { PagoRetorno } from './components/Pago/PagoRetorno.jsx';
 import { PublicLayout } from './layouts/PublicLayout';
 import { ProductFormContainer } from './components/adminComponents/ProductFormContainer';
 import { ProductEditContainer } from './components/adminComponents/ProductEditContainer';
@@ -17,6 +19,13 @@ import { Dashboard } from './components/adminComponents/Dashboard/Dashboard';
 
 
 function App() {
+  const { pathname } = useLocation();
+
+  // Al cambiar de ruta, volver arriba: sin esto, en móvil parece que el link no hace nada.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+
   return (
     <>
     
@@ -27,6 +36,7 @@ function App() {
           <Route path="/product/:id" element={<ItemDetailContainer />} />
           <Route path="products/category/:category" element={<ItemListContainer />} />
           <Route path="/carrito" element={<CartView />} />
+          <Route path="/pago/retorno" element={<PagoRetorno />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

@@ -1,4 +1,5 @@
 rules_version = '2';
+// Ambrosía — reglas v2026-10-14 (stock + variants + categories)
 
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -12,10 +13,11 @@ service cloud.firestore {
 
       // Edición: admin total, o compra pública que SOLO descuenta stock (sin tocar lo demás)
       // (acepta int, float/double o string numérico heredado; también permite descontar stock dentro de variants)
+      // OJO: se valida cada campo solo si cambió (affectedKeys), porque keys() trae TODO el documento
       allow update: if request.auth != null || (
         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['stock', 'variants'])
-        && (!request.resource.data.keys().hasAny(['variants']) || request.resource.data.variants.size() == resource.data.variants.size())
-        && (!request.resource.data.keys().hasAny(['stock']) || (
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['variants']) || request.resource.data.variants.size() == resource.data.variants.size())
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['stock']) || (
           request.resource.data.stock is number
           && request.resource.data.stock >= 0
           && (
@@ -31,6 +33,12 @@ service cloud.firestore {
     match /categories/{id} {
       allow read: if true;
       allow create, update, delete: if request.auth != null;
+    }
+
+    // Órdenes: las crea y actualiza SOLO el backend (Admin SDK, sin reglas).
+    // El front consulta el estado vía la función getOrderStatus.
+    match /orders/{id} {
+      allow read, create, update, delete: if false;
     }
 
     // Todo lo demás: denegado por defecto

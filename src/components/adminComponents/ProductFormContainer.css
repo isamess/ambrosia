@@ -135,7 +135,7 @@
   border: none;
   border-radius: 8px;
   background: #c96a2b;
-  color: #fffdf7;
+  color: #e3d4aa;
   font-weight: 600;
   cursor: pointer;
   transition:
@@ -145,7 +145,7 @@
 }
 
 .btn:hover {
-  background: #a8551f;
+  background: #e28242;
 }
 .btn:active {
   transform: translateY(1px);
